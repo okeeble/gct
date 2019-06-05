@@ -721,7 +721,7 @@ globus_l_gfs_new_server_cb(
             0,
             "remotehost=%s", remote_contact);
 
-        if(globus_i_gfs_config_bool("epsv_match") && remote_ip[0] != '[')
+        if(globus_i_gfs_config_bool("epsv_match") && (remote_ip[0] != '[' || strncmp(remote_ip, "[::ffff:", 8) == 0))
             globus_gfs_config_set_bool("ipv6", GLOBUS_FALSE);
 
         result = globus_xio_handle_cntl(
