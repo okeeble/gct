@@ -657,7 +657,6 @@ globus_gridftp_server_control_attr_set_epsv_ip(
     return GLOBUS_SUCCESS;
 }
 
-globus_result_t
 globus_gridftp_server_control_attr_set_ipv6(
     globus_gridftp_server_control_attr_t    in_attr,
     globus_bool_t                           ipv6)
